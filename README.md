@@ -14,7 +14,7 @@ I am a strong advocate for Cloud Computing and Serverless Architectures, so I wo
 Instead I will explore each problem and possible solutions
 
 
-### A Chat Application
+## A Chat Application
 
 Thinking of [whatsapp system design](https://github.com/rgyani/system-design-examples/blob/main/whatsapp.md), we could use a Application Load Balancer approach to spin up servers allowing users to connect and retrieve message, and use a Redis in-memory database as detailed in the diagram below
 
@@ -67,7 +67,7 @@ Further we can define Web ACL (Web Access Control List):
 
 
 
-### File uploading from one client and notification
+## File uploading from one client and notification
 
 We could have scenarios where a user/machine wants to upload a large blob to the cloud and the user/machine on the other end needs to be notified. The scenarios could be a cloud-upload after a self-driving simulation like Google Street View or even a Chat user in the above use-case sending a large file
 
@@ -95,7 +95,7 @@ Since we are using AWS API Gateway, we can integrate Cognito Authentication + Au
 AWS WAF also integrates with API Gateway with rules running at regional or edge level 
 
 
-### Continuous communication from one client to the cloud
+## Continuous communication from one client to the cloud
 
 Consider the scenario when a car need to continuously update its sensor data to the cloud.
 
@@ -176,7 +176,7 @@ Remember WAF cannot be used for EC2 instances, so securing the server and open p
 
 However, we can use AWS System Manager Session Manager port-forwarding features to remove the requirement of Public IP Addresses and enable only authorized users to access the server by the following mechanism
 
-### SSM Port-forwarding
+## SSM Port-forwarding
 AWS Systems Manager Session Manager allows you to securely connect to your EC2 instances, without the need to run and to operate your own bastion hosts and without the need to run SSH on your EC2 instances. When Systems Manager's Agent is installed on your instances and **when you have IAM permissions to call Systems Manager API**
 
 So for this to work, you need to 
@@ -195,7 +195,7 @@ Once this session is established any request on your local port (provided above)
 
 
 
-# Video Chat/ Remote Assistance Use Case
+## Video Chat/ Remote Assistance Use Case
 
 Traditionally video chat is implemented using using a Peer-to-Peer connection over lossy-UDP using WebRTC protocol.   
 Obviously, in a MS Teams call with multiple participants, this P2P connection will be replaced by a STAR topology with a central hub managing all the to-and-from communication 
@@ -224,12 +224,12 @@ Now we have identified the server and port to send the data to, we can use
 * Media Streams for Video and Audio
 * Data streams for chat messages
 
-### Using AWS Kinesis Video Streams
+## Using AWS Kinesis Video Streams
 Amazon Kinesis Video Streams provides a standards-compliant WebRTC implementation as a fully managed capability. You can use Amazon Kinesis Video Streams with WebRTC to securely live stream media or perform two-way audio or video interaction between any camera IoT device and WebRTC-compliant mobile or web players. As a fully managed capability, you don't have to build, operate, or scale any WebRTC-related cloud infrastructure, such as signaling or media relay servers to securely stream media across applications and devices.
 
 In a video chat app, the Master and Viewer use either the Javascript, iOS, or Android WebRTC SDK from AWS to communicate securely over a Websocket connection with the Kinesis Video Streams for WebRTC service
 
-### Using MeetEcho Janus server on EC2 instances
+## Using MeetEcho Janus server on EC2 instances
 [Janus](https://github.com/meetecho/janus-gateway) is an open source, general purpose, WebRTC server designed and developed by Meetecho. 
 
 ### Using AWS Chime as a WebRTC service
@@ -237,7 +237,7 @@ AWS Chime also provides as SDK for running a WebRTC server which you can host ov
 
 
 
-### AWS API Gateway (REST vs HTTP)
+## AWS API Gateway (REST vs HTTP)
 
 1. **REST API (10,000 RPS Limit)**  
 The REST API type in API Gateway is the older, feature-rich option that includes many built-in capabilities:
